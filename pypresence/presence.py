@@ -31,7 +31,6 @@ class Presence(BaseClient):
         else:
             payload = payload_override
         self.send_data(1, payload)
-        return self.loop.run_until_complete(self.read_output())
 
     def clear(self, pid: int = os.getpid()):
         payload = Payload.set_activity(pid, activity=None)
